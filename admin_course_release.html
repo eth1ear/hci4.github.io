@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Publisher</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #333;
+        background-color: white;
+    }
+
+    .header .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .content {
+        padding: 20px;
+        min-height: 80vh; /* Adjusting height to take the majority of the viewport */
+    }
+
+    .main-content {
+        margin-bottom: 20px;
+    }
+
+    .form-section {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .form-section .main-form, .form-section .sidebar {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    .form-section .main-form {
+        flex: 2;
+        margin-right: 20px;
+    }
+
+    .form-section .sidebar {
+        flex: 1;
+    }
+
+    textarea, input[type="text"], select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px; /* Increasing margin for better separation */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button.publish {
+        width: 100%; /* Making the button take full width of the sidebar */
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button.publish:hover {
+        background-color: #45a049;
+    }
+
+    .published-courses {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background: #333;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div>Administrator</div>
+    <div>
+        <button onclick="location.href='admin_announcements.html'">Notification Publisher</button>
+        <button onclick="location.href='admin_course_release.html'">Course Publisher</button>
+        <button onclick="location.href='admin_resource_upload.html'">Resource Upload</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <div class="main-content">
+        <h2>Course Publisher</h2>
+        <div class="form-section">
+            <div class="main-form">
+                <input type="text" placeholder="Course Title" id="course-title">
+                <textarea placeholder="Course Description" rows="6" id="course-description"></textarea>
+                <select id="week-day">
+                    <option value="">Select Day</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                </select>
+                <select id="time-slot">
+                    <option value="">Select Time Slot</option>
+                    <option value="8:00-9:35">8:00-9:35</option>
+                    <option value="10:00-11:35">10:00-11:35</option>
+                    <option value="13:30-15:05">13:30-15:05</option>
+                    <option value="15:30-17:05">15:30-17:05</option>
+                    <option value="19:00-20:35">19:00-20:35</option>
+                </select>
+            </div>
+            <div class="sidebar">
+                <input type="text" placeholder="Instructor Name" id="instructor-name">
+                <input type="text" placeholder="Location" id="location">
+                <button class="publish" onclick="publishCourse()">Publish</button>
+            </div>
+        </div>
+    </div>
+    <div class="published-courses">
+        <h2>Published Courses</h2>
+        <table id="courses-table">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Instructor</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Location</th>
+            </tr>
+            <!-- Published courses will be appended here -->
+        </table>
+    </div>
+</div>
+<div class="footer">Tongji University</div>
+
+<script>
+    function publishCourse() {
+        const title = document.getElementById('course-title').value;
+        const description = document.getElementById('course-description').value;
+        const instructor = document.getElementById('instructor-name').value;
+        const day = document.getElementById('week-day').value;
+        const time = document.getElementById('time-slot').value;
+        const location = document.getElementById('location').value;
+
+        if (title && description && instructor && day && time && location) {
+            const table = document.getElementById('courses-table');
+            const row = table.insertRow();
+            row.insertCell(0).innerText = title;
+            row.insertCell(1).innerText = description;
+            row.insertCell(2).innerText = instructor;
+            row.insertCell(3).innerText = day.charAt(0).toUpperCase() + day.slice(1);
+            row.insertCell(4).innerText = time;
+            row.insertCell(5).innerText = location;
+
+            // Clear the form fields
+            document.getElementById('course-title').value = '';
+            document.getElementById('course-description').value = '';
+            document.getElementById('instructor-name').value = '';
+            document.getElementById('week-day').value = '';
+            document.getElementById('time-slot').value = '';
+            document.getElementById('location').value = '';
+        } else {
+            alert('Please fill in all fields.');
+        }
+    }
+</script>
+</body>
+</html>

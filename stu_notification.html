@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Notifications</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header .student {
+        font-size: 20px;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .footer {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .notification {
+        background: white;
+        margin: 10px 0;
+        padding: 15px;
+        border-left: 5px solid #4CAF50;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .notification h2 {
+        margin-top: 0;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="student">Student</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='stu_course_table.html'">Course table</button>
+        <button class="other-buttons" onclick="location.href='stu_grade.html'">My grade</button>
+        <button class="other-buttons" onclick="location.href='stu_notification.html'">Notification</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <h1>Notifications</h1>
+    <div class="notification">
+        <h2>Library Announcement</h2>
+        <p>The main library will be closed this Friday for annual maintenance. Please plan your visits accordingly.</p>
+    </div>
+    <div class="notification">
+        <h2>Exam Schedule Update</h2>
+        <p>There has been an update to the end-of-semester exam schedule for several courses. Please check the updated schedule on the student portal.</p>
+    </div>
+    <div class="notification">
+        <h2>Scholarship Application</h2>
+        <p>The application period for the Academic Excellence Scholarship is now open. Eligible students are encouraged to apply by November 30th.</p>
+    </div>
+    <div class="notification">
+        <h2>Guest Lecture on Data Science</h2>
+        <p>We are pleased to announce a guest lecture by Dr. Emily Zhao on 'The Future of Data Science', scheduled for next Wednesday at 3 PM in Auditorium B. All are welcome.</p>
+    </div>
+    <div class="notification">
+        <h2>Covid-19 Safety Measures</h2>
+        <p>In response to recent health concerns, all campus visitors are reminded to wear masks in indoor spaces and utilize available sanitation stations.</p>
+    </div>
+</div>
+<div class="footer">Tongji University</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header .student {
+        font-size: 20px;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f0f0f0;
+    }
+
+    .semester {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="student">Student</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='stu_course_table.html'">Course table</button>
+        <button class="other-buttons" onclick="location.href='stu_grade.html'">My grade</button>
+        <button class="other-buttons" onclick="location.href='stu_notification.html'">Notification</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <h1>Welcome to the Student Dashboard</h1>
+    <div class="semester">2023-2024 学年春季学期</div>
+    <table>
+        <caption><strong>Weekly Course Schedule</strong></caption>
+        <tr>
+            <th>Time/Day</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>8:00 - 9:35</td>
+            <td>Database Principles and Applications</td>
+            <td>Human-Computer Interaction</td>
+            <td>Database Principles and Applications</td>
+            <td>Dragon Boats</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>10:00 - 11:35</td>
+            <td>Computer Networks</td>
+            <td>Operating Systems</td>
+            <td>Computer Networks</td>
+            <td>Operating Systems</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13:30 - 15:05</td>
+            <td>Algorithm Design and Analysis</td>
+            <td></td>
+            <td>Ideology and politics</td>
+            <td>Computer system architecture</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15:30 - 17:05</td>
+            <td>Python modeling</td>
+            <td></td>
+            <td></td>
+            <td>Big Data and Artificial Intelligence</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>19:00 - 20:35</td>
+            <td>Introduction to Artificial Intelligence</td>
+            <td></td>
+            <td>Computer Network Experiments</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div class="footer">Tongji University</div>
+</body>
+</html>

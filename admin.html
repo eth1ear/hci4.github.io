@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header .admin {
+        font-size: 20px;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 12px;
+        color: #333;
+        margin-top: auto;
+        padding: 10px;
+        background: #333;
+        color: white;
+        width: 100%;
+    }
+
+    .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .profile-pic {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .info {
+        margin-top: 20px;
+    }
+
+    .info p {
+        margin: 5px 0;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="admin">Admin</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='admin_announcements.html'">Notification Publisher</button>
+        <button class="other-buttons" onclick="location.href='admin_course_release.html'">Course Publisher</button>
+        <button class="other-buttons" onclick="location.href='admin_resource_upload.html'">Resource Upload</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <img src="images/wangming.jpg" alt="Profile Picture" class="profile-pic">
+    <div class="info">
+        <p><strong>姓名：</strong>王明</p>
+        <p><strong>年龄：</strong>35</p>
+        <p><strong>职位：</strong>行政主管</p>
+    </div>
+</div>
+<div class="footer">Tongji University</div>
+</body>
+</html>

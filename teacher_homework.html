@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Homework Management</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 100%; /* Full height */
+        background-color: #f4f4f4;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header .teacher {
+        font-size: 20px;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .footer {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .main {
+        display: flex;
+        height: calc(100% - 40px); /* Adjusting height considering header */
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #eee;
+        padding: 10px;
+        height: 100%; /* Full height */
+        box-sizing: border-box; /* Include padding in width/height */
+    }
+
+    .sidebar button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #f9f9f9;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .sidebar button:hover {
+        background-color: #ddd;
+    }
+
+    .content {
+        flex-grow: 1;
+        padding: 20px;
+        text-align: left;
+        overflow-y: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f0f0f0;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="teacher">Teacher</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='teacher_course_table.html'">Course table</button>
+        <button class="other-buttons" onclick="location.href='teacher_homework.html'">Homework</button>
+        <button class="other-buttons" onclick="location.href='teacher_notification.html'">Notification</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="main">
+    <div class="sidebar">
+        <button onclick="showContent('exam-grading')">Exam Grading</button>
+        <button onclick="showContent('homework-publish')">Homework Publishing</button>
+        <button onclick="showContent('homework-grading')">Homework Grading</button>
+        <button onclick="showContent('attendance')">Attendance</button>
+    </div>
+    <div class="content" id="content">
+        <h1>Welcome to Homework Management</h1>
+        <p>Select an option from the left to begin.</p>
+    </div>
+</div>
+<script>
+    function showContent(section) {
+        var content = document.getElementById('content');
+        var htmlContent = {
+            'exam-grading': '<h2>Exam Grading</h2><table><tr><th>Student Name</th><th>Course</th><th>Score</th></tr><tr><td>John Doe</td><td>Advanced Programming</td><td>92</td></tr><tr><td>Jane Smith</td><td>Data Structures</td><td>88</td></tr><tr><td>Alice Johnson</td><td>Advanced Programming</td><td>85</td></tr><tr><td>Bob Lee</td><td>Data Structures</td><td>90</td></tr></table>',
+            'homework-publish': '<h2>Homework Publishing</h2><table><tr><th>Title</th><th>Published Date</th><th>Deadline</th></tr><tr><td>Week 3 Advanced Programming Homework</td><td>2023-09-15</td><td>2023-09-22</td></tr><tr><td>Week 3 Data Structures Homework</td><td>2023-09-22</td><td>2023-09-29</td></tr></table>',
+            'homework-grading': '<h2>Homework Grading</h2><table><tr><th>Student Name</th><th>Homework Title</th><th>Submission Date</th><th>Grade</th></tr><tr><td>John Doe</td><td>Week 3 Advanced Programming Homework</td><td>2023-09-21</td><td>B+</td></tr><tr><td>Jane Smith</td><td>Week 3 Data Structures Homework</td><td>2023-09-28</td><td>A-</td></tr></table>',
+            'attendance': '<h2>Attendance</h2><p>Interface to manage and record student attendance. Options to mark absences, tardiness, and export reports.</p>'
+        };
+        content.innerHTML = htmlContent[section] || '<p>Select an option from the left to begin.</p>';
+    }
+</script>
+<div class="footer">Tongji University</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Grades</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header .student {
+        font-size: 20px;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f0f0f0;
+    }
+
+    .semester {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="student">Student</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='stu_course_table.html'">Course table</button>
+        <button class="other-buttons" onclick="location.href='stu_grade.html'">My grade</button>
+        <button class="other-buttons" onclick="location.href='stu_notification.html'">Notification</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <h1>My Grades</h1>
+    <table>
+        <caption><strong>2023-2024 学年春季学期成绩</strong></caption>
+        <tr>
+            <th>Course</th>
+	    <th>Scores<th
+            <th>Grade</th>
+            <th>Credits</th>
+        </tr>
+        <tr>
+            <td>Database Principles and Applications</td>
+            <td>92</td>
+            <td>优</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Human-Computer Interaction</td>
+            <td>88</td>
+            <td>良</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Computer Networks</td>
+            <td>95</td>
+            <td>优</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Algorithm Design and Analysis</td>
+            <td>90</td>
+            <td>优</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Python modeling</td>
+            <td>85</td>
+            <td>良</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Software Engineering</td>
+            <td>89</td>
+            <td>良</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Operating Systems</td>
+            <td>93</td>
+            <td>优</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Web Technologies</td>
+            <td>91</td>
+            <td>优</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Artificial Intelligence</td>
+            <td>94</td>
+            <td>优</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Machine Learning</td>
+            <td>90</td>
+            <td>优</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Big Data Analytics</td>
+            <td>88</td>
+            <td>良</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Cloud Computing</td>
+            <td>92</td>
+            <td>优</td>
+            <td>3</td>
+        </tr>
+    </table>
+</div>
+<div class="footer">Tongji University</div>
+</body>
+</html>

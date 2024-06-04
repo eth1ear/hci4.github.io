@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource Upload</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #333;
+        background-color: white;
+    }
+
+    .header .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .content {
+        padding: 20px;
+        min-height: 80vh; /* Adjusting height to take the majority of the viewport */
+    }
+
+    .main-content {
+        margin-bottom: 20px;
+    }
+
+    .form-section {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .form-section .main-form, .form-section .sidebar {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    .form-section .main-form {
+        flex: 2;
+        margin-right: 20px;
+    }
+
+    .form-section .sidebar {
+        flex: 1;
+    }
+
+    textarea, input[type="text"], input[type="file"], select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px; /* Increasing margin for better separation */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button.upload {
+        width: 100%; /* Making the button take full width of the sidebar */
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button.upload:hover {
+        background-color: #45a049;
+    }
+
+    .uploaded-resources {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background: #333;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div>Administrator</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='admin_announcements.html'">Notification Publisher</button>
+        <button class="other-buttons" onclick="location.href='admin_course_release.html'">Course Publisher</button>
+        <button class="other-buttons" onclick="location.href='admin_resource_upload.html'">Resource Upload</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <div class="main-content">
+        <h2>Resource Upload</h2>
+        <div class="form-section">
+            <div class="main-form">
+                <input type="text" placeholder="Resource Title" id="resource-title">
+                <textarea placeholder="Resource Description" rows="6" id="resource-description"></textarea>
+                <input type="file" id="resource-file">
+            </div>
+            <div class="sidebar">
+                <button class="upload" onclick="uploadResource()">Upload</button>
+            </div>
+        </div>
+    </div>
+    <div class="uploaded-resources">
+        <h2>Uploaded Resources</h2>
+        <table id="resources-table">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>File Name</th>
+                <th>Upload Time</th>
+            </tr>
+            <!-- Uploaded resources will be appended here -->
+        </table>
+    </div>
+</div>
+<div class="footer">Tongji University</div>
+
+<script>
+    function uploadResource() {
+        const title = document.getElementById('resource-title').value;
+        const description = document.getElementById('resource-description').value;
+        const fileInput = document.getElementById('resource-file');
+        const file = fileInput.files[0];
+
+        if (title && description && file) {
+            const table = document.getElementById('resources-table');
+            const row = table.insertRow();
+            row.insertCell(0).innerText = title;
+            row.insertCell(1).innerText = description;
+            row.insertCell(2).innerText = file.name;
+            row.insertCell(3).innerText = new Date().toLocaleString();
+
+            // Clear the form fields
+            document.getElementById('resource-title').value = '';
+            document.getElementById('resource-description').value = '';
+            fileInput.value = '';
+        } else {
+            alert('Please fill in all fields and select a file.');
+        }
+    }
+</script>
+</body>
+</html>

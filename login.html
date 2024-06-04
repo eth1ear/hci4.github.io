@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICampus Login</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f4f4;
+    }
+
+    .login-form {
+        width: 90%;
+        max-width: 400px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .login-form img {
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    h1 {
+        margin: 0;
+        color: #333;
+        font-size: 24px;
+    }
+
+    select, input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 12px;
+        color: grey;
+        margin-top: 20px;
+    }
+</style>
+<script>
+function redirectToPage() {
+    var role = document.getElementById('userRole').value;
+    if (role === 'student') {
+        window.location.href = 'student.html';
+    } else if (role === 'teacher') {
+        window.location.href = 'teacher.html';
+    } else if (role === 'admin') {
+        window.location.href = 'admin.html';
+    } else {
+        alert('Please select your role to continue.');
+    }
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="login-form">
+        <h1>ICampus</h1>
+        <img src="images/login.jpg" alt="Profile Image">
+        <select id="userRole" required>
+            <option value="">Select your role</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Administrator</option>
+        </select>
+        <input type="text" placeholder="Enter your number" required>
+        <input type="password" placeholder="Enter your password" required>
+        <button type="button" onclick="redirectToPage()">Continue</button>
+        <p class="footer">By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+    </div>
+</div>
+</body>
+</html>

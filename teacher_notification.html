@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Notifications</title>
+<style>
+    body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    .header .teacher {
+        font-size: 20px;
+    }
+
+    .header button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .footer {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    .sign-out {
+        background-color: #000;
+        color: white;
+    }
+
+    .other-buttons {
+        background-color: white;
+        color: #333;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .notification {
+        background: white;
+        margin: 10px 0;
+        padding: 15px;
+        border-left: 5px solid #4CAF50;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .notification h2 {
+        margin-top: 0;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="teacher">Teacher</div>
+    <div>
+        <button class="other-buttons" onclick="location.href='teacher_course_table.html'">Course table</button>
+        <button class="other-buttons" onclick="location.href='teacher_homework.html'">Homework</button>
+        <button class="other-buttons" onclick="location.href='teacher_notification.html'">Notification</button>
+        <button class="sign-out" onclick="location.href='login.html'">Sign out</button>
+    </div>
+</div>
+<div class="content">
+    <h1>Notifications</h1>
+    <div class="notification">
+        <h2>Faculty Meeting Reminder</h2>
+        <p>Don't forget our monthly faculty meeting this Friday at 2 PM in the main conference room. Agenda items include curriculum revisions and upcoming student activities.</p>
+    </div>
+    <div class="notification">
+        <h2>Grading Deadline Approaching</h2>
+        <p>Please remember to submit all final grades for this semester by the end of next week. Contact the admin office if you encounter any issues.</p>
+    </div>
+    <div class="notification">
+        <h2>New Teaching Tools Available</h2>
+        <p>We have recently acquired a new set of digital teaching tools and software. Training sessions will be held next Thursday. Please sign up if interested.</p>
+    </div>
+    <div class="notification">
+        <h2>Research Funding Opportunities</h2>
+        <p>The university is offering additional funding for research in several new areas, including artificial intelligence and sustainability. Application details are on the intranet.</p>
+    </div>
+    <div class="notification">
+        <h2>Updated COVID-19 Guidelines</h2>
+        <p>In response to the latest public health recommendations, updated COVID-19 guidelines for campus activities are now available. Please review to ensure compliance.</p>
+    </div>
+</div>
+<div class="footer">Tongji University</div>
+</body>
+</html>
